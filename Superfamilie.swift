@@ -237,7 +237,7 @@ final class GameScene: SKScene {
 
     private let gravity: CGFloat = -1250
     private let moveSpeed: CGFloat = 300
-    private let jumpPower: CGFloat = 720
+    private let jumpPower: CGFloat = 900
 
     private var platforms: [CGRect] = []
 
@@ -594,10 +594,10 @@ final class GameScene: SKScene {
 
     private func buildEnemies(_ parent: SKNode) {
 
-        addTennisBall(parent, x: 1220, y: 190)
-        addTennisBall(parent, x: 2180, y: 190)
-        addTennisBall(parent, x: 3150, y: 190)
-        addTennisBall(parent, x: 4450, y: 190)
+        addTennisBall(parent, x: 1220, y: 208)
+        addTennisBall(parent, x: 2180, y: 208)
+        addTennisBall(parent, x: 3150, y: 208)
+        addTennisBall(parent, x: 4450, y: 208)
     }
 
     private func addTennisBall(
@@ -744,7 +744,7 @@ final class GameScene: SKScene {
         player = SKNode()
         player.position = CGPoint(
             x: 160,
-            y: 250
+            y: 268
         )
 
         player.name = "player"
@@ -1169,8 +1169,8 @@ final class GameScene: SKScene {
 
         onGround = false
 
-        let bottom = player.position.y - 80
-        let oldBottom = oldY - 80
+        let bottom = player.position.y - 85
+        let oldBottom = oldY - 85
 
         for rect in platforms {
 
@@ -1188,7 +1188,7 @@ final class GameScene: SKScene {
             if overlapsX && crossedTop && velocity.dy <= 0 {
 
                 player.position.y =
-                    rect.maxY + 80
+                    rect.maxY + 85
 
                 velocity.dy = 0
                 onGround = true
@@ -1276,7 +1276,7 @@ final class GameScene: SKScene {
         nala.position.x +=
             (player.position.x - 110 - nala.position.x) * 0.08
 
-        nala.position.y = 245
+        nala.position.y = 229
 
         for ball in ballNodes {
 
@@ -1306,7 +1306,7 @@ final class GameScene: SKScene {
 
         nala.position = CGPoint(
             x: player.position.x - 120,
-            y: 245
+            y: 229
         )
 
         nala.zPosition = 100
